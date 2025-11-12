@@ -1,2 +1,2 @@
 # Node-Game
-All of my code for the Node server drawing game
+All of my code for my Node server drawing game
