@@ -1,0 +1,22 @@
+body {
+    font-family: "Lexend";
+    margin: 1;
+    padding: 0;
+}
+
+#datetime {
+    margin: 1;
+    position: fixed;
+    text-align: right;
+    bottom: 0;
+    right: 0;
+
+}
+
+/*#canvas {
+    position: relative;
+}*/
+
+#wrapper {
+    position: relative;
+}
