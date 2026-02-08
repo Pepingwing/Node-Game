@@ -12,6 +12,7 @@
     "dependencies": {
         "express": "^4.21.2",
         "jsdom": "^26.1.0",
+        "p5.collide2d": "file:../../../Downloads/p5.collide2D-0.7.3/p5.collide2D-0.7.3",
         "p5.layers": "^1.0.2",
         "socket.io": "^4.8.1"
     }

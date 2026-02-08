@@ -13,10 +13,29 @@ body {
 
 }
 
-/*#canvas {
+#canvas_wrapper {
     position: relative;
-}*/
+}
 
-#wrapper {
-    position: relative;
+#score, #tutorial {
+    bottom: 170px; 
+    margin: 0; 
+    display: inline-block;
+}
+
+#score { 
+    font-size: 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 535px;
+}
+
+#score p {
+    margin: 0;             /* Remove default paragraph margins */
+    display: inline;       /* Make paragraphs inline */
+}
+
+#tutorial { 
+    left: 200px; 
 }
