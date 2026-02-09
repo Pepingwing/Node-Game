@@ -33,8 +33,8 @@ function ball_start_direction() {
     if (Math.random() < 0.5) {
         initial_y_speed *= -1;
     }
-    initial_x_speed *= 2;
-    initial_y_speed *= 2;
+    initial_x_speed *= 1.5;
+    initial_y_speed *= 1.5;
 }
 function random_number(min, max) {  //based on w3schools function
     return Math.random() * (max - min + 1) + min;
@@ -259,9 +259,19 @@ function newConnection(socket){
 
     function line_Msg(line_pos){
         line_pos.own = false;
-        received_lines.push(line_pos);                         // include new line to the list
+        received_lines.push(line_pos);                  // include new line to the list
+        let line_surplus = received_lines.length - 5;
+
         console.log(" l ", line_pos);
         socket.broadcast.emit('line', line_pos);
+
+        if (line_surplus > 0) {
+            for (let i = 0; i < line_surplus; i++) {    //to ensure it removes any surplus (more than 5) oldest lines from the game
+                received_lines.splice(0,  1);
+                io.sockets.emit("deleted_line", 0);
+            }
+        }
+        
     }
 
     function reset_lines(delete_all_lines) {
