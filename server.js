@@ -33,8 +33,8 @@ function ball_start_direction() {
     if (Math.random() < 0.5) {
         initial_y_speed *= -1;
     }
-    initial_x_speed *= 1.25;
-    initial_y_speed *= 1.25;
+    initial_x_speed *= 2.5;
+    initial_y_speed *= 2.5;
 }
 function random_number(min, max) {  //based on w3schools function
     return Math.random() * (max - min + 1) + min;
@@ -94,7 +94,7 @@ function ball_movement(){
     }
     
     let win = ball_goal_colission();
-    if ((restarting) && (timer - restart_time == 120)) {    //game ended
+    if ((restarting) && (timer - restart_time == 50)) {    //game ended
         restarting = false;
         restart_time = 0;
         win = false;
@@ -118,7 +118,7 @@ function ball_movement(){
     io.sockets.emit('ball', ball_data);
     io.sockets.emit('connections', connections, cx_speed, cy_speed);
 }
-setInterval(ball_movement, 2);  // every 2 frames i think
+setInterval(ball_movement, 16);  // every 2 frames i think
 
 function ball_goal_colission (){ // circle circle colission check
     const left_goal = { //since I don't want to alter these, i can just store this in client and server, instead of sending back and/or forth data that doens't change
